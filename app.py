@@ -22,4 +22,4 @@ def div():
     return idade1/idade2
 print("O resultado da divisão entre as idades é",div())
 
- 
+
