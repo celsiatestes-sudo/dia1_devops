@@ -16,4 +16,10 @@ else:
 def mult():
     return idade1*idade2
 print("A multi desta idade é", mult())
+#Adicionando divisão 
+def div():
+    return idade1/idade2
+print("O resultado da divisão entre as idades é",div())
+
+ 
  
