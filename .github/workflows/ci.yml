@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:        # roda quando houver push
+    branches: [ "main" ]   # apenas na branch main
+  pull_request:            # e quando houver PR para a main
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest   # máquina virtual que o GitHub cria
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: " 3.12.3"   # versão que vais usar
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          # se tiver um requirements.txt, descomenta abaixo
+          # pip install -r requirements.txt
+
+      - name: Run tests
+        run: pytest
