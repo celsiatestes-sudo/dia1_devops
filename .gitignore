@@ -1,2 +1,5 @@
 venvdia1
 chaves.txt
+git remote -v
+git remote -v.pub
+
